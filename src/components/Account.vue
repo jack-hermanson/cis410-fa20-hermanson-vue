@@ -4,6 +4,7 @@
     <div class="row">
       <div class="col-12 col-lg-8">
         <h4>Purchases</h4>
+        <p>{{ data }}</p>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -23,11 +24,13 @@
   export default {
     data() {
       return {
-
+        data: 'test'
       };
     },
     methods: {
-        
+      getData() {
+        this.data = axios.get('/account');
+      }  
     }
   }
 

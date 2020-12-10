@@ -43,6 +43,8 @@
     },
     methods: {
       onSubmit() {
+        console.log('form submitted');
+
         const formData = {
           email: this.email,
           password: this.password
@@ -54,7 +56,7 @@
             this.$store.commit('storeUserInApp', res.data.user);
 
             // todo: redirect to user account page
-            this.$router.replace('/strains');
+            this.$router.replace('/account');
           })
           .catch(err => {
             console.log(err, err.response.data);
