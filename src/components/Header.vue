@@ -15,9 +15,7 @@
           <router-link class="nav-link" to="/sales">Sales</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/login">
-            <button class="btn btn-warning">Log In</button>
-          </router-link>
+          <router-link class="nav-link" to="/login">Log In</router-link>
         </li>
       </ul>
     </div>
