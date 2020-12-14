@@ -18,6 +18,9 @@ export default {
   },
   components: {
     'app-header': Header
+  },
+  created() {
+    this.$store.dispatch('getStrains')
   }
 }
 </script>

@@ -31,7 +31,7 @@ const routes = [{
     component: SignUp
   },
   {
-    path: '/strain/:pk',
+    path: '/strains/:pk',
     component: Strain,
     children: [{
       path: 'sale',
@@ -39,7 +39,7 @@ const routes = [{
     }]
   },
   {
-    path: '/strain/new',
+    path: '/strains/new',
     component: StrainCreate
   },
   {
