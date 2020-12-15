@@ -12,6 +12,8 @@ import Strains from './components/Strains.vue';
 import StrainCreate from './components/StrainCreate.vue';
 import Account from './components/Account.vue';
 
+import store from './store';
+
 Vue.use(VueRouter);
 
 const routes = [{
@@ -48,7 +50,14 @@ const routes = [{
   },
   {
     path: '/account',
-    component: Account
+    component: Account,
+    beforeEnter(to, from, next) {
+      if (store.state.token) {
+        next();
+      } else {
+        next('/login');
+      }
+    }
   },
   // not found must be last
   {

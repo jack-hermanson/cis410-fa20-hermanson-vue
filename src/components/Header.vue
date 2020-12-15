@@ -14,11 +14,17 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/sales">Sales</router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" v-if="!auth">
           <router-link class="nav-link" to="/login">Log In</router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" v-if="!auth">
           <router-link class="nav-link" to="/signup">Sign Up</router-link>
+        </li>
+        <li class="nav-item" v-if="auth">
+          <router-link class="nav-link" to="/account">My Account</router-link>
+        </li>
+        <li class="nav-item" v-if="auth">
+          <a @click="onLogout" href="#" class="nav-link">Log Out</a>
         </li>
       </ul>
     </div>
@@ -27,7 +33,16 @@
 
 <script>
   export default {
-
+    computed: {
+      auth() {
+        return this.$store.state.token;
+      }
+    },
+    methods: {
+      onLogout() {
+        this.$store.dispatch('logout');
+      }
+    }
   }
 
 </script>
