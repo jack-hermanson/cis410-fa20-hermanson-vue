@@ -10,6 +10,8 @@
               <label for="search-text">Search</label>
               <input placeholder="Strain name..." class="form-control" type="text" name="searchText" id="search-text">
             </div>
+
+            <div class="alert alert-danger mb-0">This does not work yet, sorry.</div>
           </form>
         </div>
       </div>

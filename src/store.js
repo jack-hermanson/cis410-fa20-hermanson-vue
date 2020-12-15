@@ -18,7 +18,7 @@ export default new Vuex.Store({
       state.user = user;
     },
     storeStrains(state, strains) {
-        state.strains = strains;
+      state.strains = strains;
     }
   },
   actions: {
@@ -31,7 +31,7 @@ export default new Vuex.Store({
           commit('storeStrains', res.data);
         })
         .catch(err => {
-            console.log('Error in /strains action', err);
+          console.log('Error in /strains action', err);
         });
     }
   }
