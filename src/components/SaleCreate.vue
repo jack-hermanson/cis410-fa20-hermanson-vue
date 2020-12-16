@@ -36,6 +36,15 @@ export default {
     },
     methods: {
         submitPurchase() {
+            if (!this.amount) {
+                this.errorMessage = 'The "amount" field is required!';
+                return;
+            }
+            if (this.amount < 1 || this.amount > 28) {
+                this.errorMessage = 'You must select an amount between 1 and 28 grams.';
+                return;
+            }
+
             const purchase = {
                 amount: parseInt(this.amount),
                 shelfStrainId: this.shelfStrainId
