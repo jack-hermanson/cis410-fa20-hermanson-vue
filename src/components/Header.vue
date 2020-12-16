@@ -11,9 +11,6 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/strains">Strains</router-link>
         </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/sales">Sales</router-link>
-        </li>
         <li class="nav-item" v-if="!auth">
           <router-link class="nav-link" to="/login">Log In</router-link>
         </li>

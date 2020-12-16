@@ -29,6 +29,9 @@
 
               <dt>Gram Price</dt>
               <dd>${{ strain.GramPrice }}</dd>
+
+              <dt>Shelf Strain ID</dt>
+              <dd>{{ strain.ShelfStrainId }}</dd>
             </dl>
             <hr>
             <router-link class="btn btn-success" v-if="auth" :to="`/strains/${this.$route.params.pk}/sale`">Buy this
@@ -36,6 +39,9 @@
             <router-link class="btn btn-outline-success" v-else to="/login">Log In to Buy</router-link>
           </div>
         </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <router-view :shelfStrainId="strain.ShelfStrainId"></router-view>
       </div>
     </div>
   </div>
